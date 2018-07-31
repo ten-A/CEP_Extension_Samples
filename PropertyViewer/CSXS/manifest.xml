@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest Version="6.0" ExtensionBundleId="com.example.propertyviewer" ExtensionBundleVersion="1.0.0"
+		ExtensionBundleName="propertyviewer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Author><![CDATA[]]></Author>
+	<Abstract><![CDATA[]]></Abstract>
+	<ExtensionList>
+	<!--エクステンションIDは前出のExtensionBundleIdと同じものを設定しておきましょう。バージョンもExtensionBundleVersionに合わせます。-->
+		<Extension Id="com.example.propertyviewer" Version="1.0.0" />
+	</ExtensionList>
+	<ExecutionEnvironment>
+		<HostList>
+			<Host Name="PHXS" Version="17.0" />
+			<Host Name="PHSP" Version="17.0" />
+			<Host Name="ILST" Version="19.0" />
+			<Host Name="IDSN" Version="11.0" />
+			<Host Name="AICY" Version="11.0" />
+			<Host Name="PPRO" Version="9.0" />
+			<Host Name="AEFT" Version="13.0" />
+			<Host Name="AUDT" Version="8.0" />
+			<Host Name="PRLD" Version="3.0" />
+		</HostList>
+		<LocaleList>
+			<Locale Code="All" />
+		</LocaleList>
+		<RequiredRuntimeList>
+			<RequiredRuntime Name="CSXS" Version="6.0" />
+		</RequiredRuntimeList>
+	</ExecutionEnvironment>
+	<DispatchInfoList>
+		<Extension Id="com.example.propertyviewer">
+			<DispatchInfo >
+				<Resources>
+				<MainPath>./index.html</MainPath>
+				<ScriptPath>./jsx/hostscript.jsx</ScriptPath>
+				</Resources>
+				<Lifecycle>
+					<AutoVisible>true</AutoVisible>
+				</Lifecycle>
+				<UI>
+					<Type>Panel</Type>
+					<Menu>Property Viewer</Menu>
+					<Geometry>
+						<MinSize>
+							<Height>150</Height>
+							<Width>300</Width>
+						</MinSize>
+						<Size>
+							<Height>450</Height>
+							<Width>400</Width>
+						</Size>
+						<MaxSize>
+							<Height>1200</Height>
+							<Width>900</Width>
+						</MaxSize>
+					</Geometry>
+					<!--<Icons>
+						<Icon Type="Normal">./icons/regular.png</Icon>
+						<Icon Type="RollOver">./icons/active.png</Icon>
+					</Icons>-->
+				</UI>
+			</DispatchInfo>
+		</Extension>
+	</DispatchInfoList>
+</ExtensionManifest>
