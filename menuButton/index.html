@@ -1,0 +1,641 @@
+　<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="./js/jquery-2.0.2.min.js"></script> 
+	<script src="./js/CSInterface.js"></script> 
+	<script src="./js/themeSynchronizer.js"></script> 
+	<script src="./js/main.js"></script> 
+	<script>
+		$(function() {
+			$('#panel > dd:gt(0)').hide();
+			$('#panel > dt').click(function(e){
+				$('#panel > dd').slideUp(500);
+				$('+dd', this).slideDown(500);
+				})
+			});
+	</script>
+	<link id="hostStyle" rel="stylesheet" href="css/theme.css"/>
+	</head>
+	<body>
+		<dl id="panel">
+		<dt>File</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('new')">New</button>
+			<button type="button" onclick="ivkMnu('newFromTemplate')">New(Temp)</button>
+			<button type="button" onclick="ivkMnu('open')">Open</button>
+			<button type="button" onclick="ivkMnu('Adobe Bridge Browse')">To Bridge</button>
+			<button type="button" onclick="ivkMnu('close')">Close</button>
+			<button type="button" onclick="ivkMnu('save')">Save</button>
+			<button type="button" onclick="ivkMnu('saveas')">Save As</button>
+			<button type="button" onclick="ivkMnu('saveacopy')">Save a Copy</button>
+			<button type="button" onclick="ivkMnu('saveastemplate')">Save(Template)</button>
+			<button type="button" onclick="ivkMnu('Adobe AI Save For Web')">Save(Web/Dvcs)</button>
+			<button type="button" onclick="ivkMnu('Adobe AI Save Selected Slices')">SaveSlctdSlices</button>
+			<button type="button" onclick="ivkMnu('revert')">Revert</button>
+			<button type="button" onclick="ivkMnu('AI Place')">Place</button>
+			<button type="button" onclick="ivkMnu('export')">Export</button>
+			<button type="button" onclick="ivkMnu('exportSelection')">Export Selection</button>
+			<button type="button" onclick="ivkMnu('exportForScreens')">ExportForScreens</button>
+			<button type="button" onclick="ivkMnu('ai_browse_for_script')">Other Script</button>
+			<button type="button" onclick="ivkMnu('document')">Document Setup</button>
+			<button type="button" onclick="ivkMnu('doc-color-cmyk')">To CMYK</button>
+			<button type="button" onclick="ivkMnu('doc-color-rgb')">To RGB</button>
+			<button type="button" onclick="ivkMnu('File Info')">File Info</button>
+			<button type="button" onclick="ivkMnu('Print')">Print</button>
+			<button type="button" onclick="ivkMnu('quit')">Exit</button>
+			<hr>
+		</dd>
+		<dt>Edit</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('undo')">Undo</button>
+			<button type="button" onclick="ivkMnu('redo')">Redo</button>
+			<button type="button" onclick="ivkMnu('cut')">Cut</button>
+			<button type="button" onclick="ivkMnu('copy')">Copy</button>
+			<button type="button" onclick="ivkMnu('paste')">Paste</button>
+			<button type="button" onclick="ivkMnu('pasteFront')">PasteInFr</button>
+			<button type="button" onclick="ivkMnu('pasteBack')">PasteInBk</button>
+			<button type="button" onclick="ivkMnu('pasteInPlace')">PasteInPlace</button>
+			<button type="button" onclick="ivkMnu('pasteInAllArtboard')">PasteOnAA</button>
+			<button type="button" onclick="ivkMnu('clear')">Clear</button>
+			<button type="button" onclick="ivkMnu('Find and Replace')">Find&Replace</button>
+			<button type="button" onclick="ivkMnu('Find Next')">Find Next</button>
+			<button type="button" onclick="ivkMnu('Check Spelling')">CheckSpelling</button>
+			<button type="button" onclick="ivkMnu('Define Pattern Menu Item')">DefinePattern</button>
+			<button type="button" onclick="ivkMnu('EditOriginal Menu Item')">Edit Original</button>
+			<button type="button" onclick="ivkMnu('Transparency Presets')">Flattener Presets</button>
+			<button type="button" onclick="ivkMnu('TracingPresets')">Tracing Presets</button>
+			<button type="button" onclick="ivkMnu('Print Presets')">Print Presets</button>
+			<button type="button" onclick="ivkMnu('PDF Presets')">PDF Presets</button>
+			<button type="button" onclick="ivkMnu('SWFPresets')">SWF Presets</button>
+			<button type="button" onclick="ivkMnu('PerspectiveGridPresets')">PerspectiveGrid</button>
+			<button type="button" onclick="ivkMnu('color')">Color Settings</button>
+			<button type="button" onclick="ivkMnu('assignprofile')">Assign Profile</button>
+			<button type="button" onclick="ivkMnu('KBSC Menu Item')">Shortcuts</button>
+			<hr>
+		</dd>
+		<dt>Edit Colors</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('Recolor Art Dialog')">Recolor</button>
+			<button type="button" onclick="ivkMnu('Adjust3')">Color Balance</button>
+			<button type="button" onclick="ivkMnu('Colors3')">Blend Fr to Bk</button>
+			<button type="button" onclick="ivkMnu('Colors4')">Blend(H)</button>
+			<button type="button" onclick="ivkMnu('Colors5')">Blend(V)</button>
+			<button type="button" onclick="ivkMnu('Colors8')">To CMYK</button>
+			<button type="button" onclick="ivkMnu('Colors7')">To Grayscale</button>
+			<button type="button" onclick="ivkMnu('Colors9')">To RGB</button>
+			<button type="button" onclick="ivkMnu('Colors6')">Invert Colors</button>
+			<button type="button" onclick="ivkMnu('Overprint2')">Overprint Black</button>
+			<button type="button" onclick="ivkMnu('Saturate3')">Saturate</button>
+			<hr>
+		</dd>
+		<dt>Preferences</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('preference')">General</button>
+			<button type="button" onclick="ivkMnu('selectPref')">Selection&...</button>
+			<button type="button" onclick="ivkMnu('keyboardPref')">Type</button>
+			<button type="button" onclick="ivkMnu('unitundoPref')">Units</button>
+			<button type="button" onclick="ivkMnu('guidegridPref')">Guides&Grid</button>
+			<button type="button" onclick="ivkMnu('snapPref')">Smart Guides</button>
+			<button type="button" onclick="ivkMnu('slicePref')">Slices</button>
+			<button type="button" onclick="ivkMnu('hyphenPref')">Hyphenation</button>
+			<button type="button" onclick="ivkMnu('pluginPref')">Plug-ins&...</button>
+			<button type="button" onclick="ivkMnu('UIPref')">UI</button>
+			<button type="button" onclick="ivkMnu('FileClipboardPref')">File Handling &...</button>
+			<button type="button" onclick="ivkMnu('BlackPref')">BLKAppearance</button>
+			<hr>
+		</dd>
+		<dt>Object</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('group')">Group</button>
+			<button type="button" onclick="ivkMnu('ungroup')">Ungroup</button>
+			<hr>
+			Lock<br />
+			<button type="button" onclick="ivkMnu('lock')">Selection</button>
+			<button type="button" onclick="ivkMnu('Selection Hat 5')">AllArtworkAbove</button>
+			<button type="button" onclick="ivkMnu('Selection Hat 7')">Other Layers</button>
+			<button type="button" onclick="ivkMnu('unlockAll')">UnlockAll</button>
+			<hr>
+			Hide<br />
+			<button type="button" onclick="ivkMnu('hide')">Selection</button>
+			<button type="button" onclick="ivkMnu('Selection Hat 4')">AllArtworkAbove</button>
+			<button type="button" onclick="ivkMnu('Selection Hat 6')">OtherLayers</button>
+			<button type="button" onclick="ivkMnu('showAll')">Show All</button>
+			<hr>
+			<button type="button" onclick="ivkMnu('Expand3')">Expand</button>
+			<button type="button" onclick="ivkMnu('expandStyle')">ExpandAppearance</button>
+			<button type="button" onclick="ivkMnu('FlattenTransparency1')">FlattenTransparency</button>
+			<button type="button" onclick="ivkMnu('Rasterize 8 menu item')">Rasterize</button>
+			<button type="button" onclick="ivkMnu('make mesh')">GradientMesh</button>
+			<button type="button" onclick="ivkMnu('AI Object Mosaic Plug-in4')">ObjectMosaic</button>
+			<button type="button" onclick="ivkMnu('TrimMark v25')">TrimMarks</button>
+			<hr>
+		</dd>
+		<dt>Transform</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('transformagain')">TransformAgain</button>
+			<button type="button" onclick="ivkMnu('transformmove')">Move</button>
+			<button type="button" onclick="ivkMnu('transformrotate')">Rotate</button>
+			<button type="button" onclick="ivkMnu('transformreflect')">Reflect</button>
+			<button type="button" onclick="ivkMnu('transformscale')">Scale</button>
+			<button type="button" onclick="ivkMnu('transformshear')">Shear</button>
+			<button type="button" onclick="ivkMnu('Transform v23')">Transform Each</button>
+			<button type="button" onclick="ivkMnu('AI Reset Bounding Box')">ResetBounds</button>
+			<hr>
+		</dd>
+		<dt>Arrange</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('sendToFront')">Bring to Front</button>
+			<button type="button" onclick="ivkMnu('sendForward')">Bring Forward</button>
+			<button type="button" onclick="ivkMnu('sendBackward')">Send Backward</button>
+			<button type="button" onclick="ivkMnu('sendToBack')">Send to Back</button>
+			<button type="button" onclick="ivkMnu('Selection Hat 2')">SendToCurrent...</button>
+			<hr>
+		</dd>
+		<dt>Slice</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('AISlice Make Slice')">Make</button>
+			<button type="button" onclick="ivkMnu('AISlice Release Slice')">Release</button>
+			<button type="button" onclick="ivkMnu('AISlice Create from Guides')">From Guides</button>
+			<button type="button" onclick="ivkMnu('AISlice Create from Selection')">From Selection</button>
+			<button type="button" onclick="ivkMnu('AISlice Duplicate')">Duplicate Slice</button>
+			<button type="button" onclick="ivkMnu('AISlice Combine')">Combine Slices</button>
+			<button type="button" onclick="ivkMnu('AISlice Divide')">Divide Slices</button>
+			<button type="button" onclick="ivkMnu('AISlice Delete All Slices')">Delete All</button>
+			<button type="button" onclick="ivkMnu('AISlice Slice Options')">Slice Options</button>
+			<button type="button" onclick="ivkMnu('AISlice Clip to Artboard')">ClipToArtboard</button>
+			<hr>
+		</dd>
+		<dt>Path</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('join')">Join</button>
+			<button type="button" onclick="ivkMnu('average')">Average</button>
+			<button type="button" onclick="ivkMnu('OffsetPath v22')">OutlineStroke</button>
+			<button type="button" onclick="ivkMnu('OffsetPath v23')">Offset Path</button>
+			<button type="button" onclick="ivkMnu('simplify menu item')">Simplify</button>
+			<button type="button" onclick="ivkMnu('Add Anchor Points2')">AddAnchor</button>
+			<button type="button" onclick="ivkMnu('Remove Anchor Points menu')">RemoveAnchor</button>
+			<button type="button" onclick="ivkMnu('Knife Tool2')">Divide Below</button>
+			<button type="button" onclick="ivkMnu('Rows and Columns….')">SplitIntoGrid</button>
+			<button type="button" onclick="ivkMnu('cleanup menu item')">Clean Up</button>
+			<hr>
+		</dd>
+		<dt>Blend</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('Path Blend Make')">Make</button>
+			<button type="button" onclick="ivkMnu('Path Blend Release')">Release</button>
+			<button type="button" onclick="ivkMnu('Path Blend Expand')">Expand</button>
+			<button type="button" onclick="ivkMnu('Path Blend Options')">Blend Options</button>
+			<button type="button" onclick="ivkMnu('Path Blend Replace Spine')">ReplaceSpine</button>
+			<button type="button" onclick="ivkMnu('Path Blend Reverse Spine')">Reverse Spine</button>
+			<button type="button" onclick="ivkMnu('Path Blend Reverse Stack')">Reverse Fr/Bk</button>
+			<hr>
+		</dd>
+		<dt>Envelope Distort</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('Make Warp')">With Warp</button>
+			<button type="button" onclick="ivkMnu('Create Envelope Grid')">With Mesh</button>
+			<button type="button" onclick="ivkMnu('Make Envelope')">WithTopObject</button>
+			<button type="button" onclick="ivkMnu('Release Envelope')">Release</button>
+			<button type="button" onclick="ivkMnu('Envelope Options')">Envelope Options</button>
+			<button type="button" onclick="ivkMnu('Expand Envelope')">Expand</button>
+			<button type="button" onclick="ivkMnu('Edit Envelope Contents')">Edit Contents</button>
+			<hr>
+		</dd>
+		<dt>Perspective</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('Attach to Active Plane')">Attach</button>
+			<button type="button" onclick="ivkMnu('Release with Perspective')">Release</button>
+			<button type="button" onclick="ivkMnu('Show Object Grid Plane')">Move Plane</button>
+			<button type="button" onclick="ivkMnu('Edit Original Object')">Edit Original</button>
+			<hr>
+		</dd>
+		<dt>Live Paint</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('Make Planet X')">Make</button>
+			<button type="button" onclick="ivkMnu('Marge Planet X')">Merge</button>
+			<button type="button" onclick="ivkMnu('Release Planet X')">Release</button>
+			<button type="button" onclick="ivkMnu('Planet X Options')">Gap Options</button>
+			<button type="button" onclick="ivkMnu('Expand Planet X')">Expand</button>
+			<hr>
+		</dd>
+		<dt>Text Wrap</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('Make Text Wrap')">Make</button>
+			<button type="button" onclick="ivkMnu('Release Text Wrap')">Release</button>
+			<button type="button" onclick="ivkMnu('Text Wrap Options…')">Options</button>
+			<hr>
+		</dd>
+		<dt>Clipping Mask</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('makeMask')">Make</button>
+			<button type="button" onclick="ivkMnu('releaseMask')">Release</button>
+			<button type="button" onclick="ivkMnu('editMask')">Edit Contents</button>
+			<hr>
+		</dd>
+		<dt>Compound Path</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('compoundPath')">Make</button>
+			<button type="button" onclick="ivkMnu('noCompoundPath')">Release</button>
+			<hr>
+		</dd>
+		<dt>Artboards</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('setCropMarks')">Convert</button>
+			<button type="button" onclick="ivkMnu('ReArrange Artboards')">Rearrange</button>
+			<button type="button" onclick="ivkMnu('Fit Artboard to artwork bounds')">FitToArtwork</button>
+			<button type="button" onclick="ivkMnu('Fit Artboard to selected Art')">FitToSelected</button>
+			<hr>
+		</dd>
+		<dt>Graph</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('setGraphStyle')">Type</button>
+			<button type="button" onclick="ivkMnu('editGraphData')">Data</button>
+			<button type="button" onclick="ivkMnu('graphDesigns')">Design</button>
+			<button type="button" onclick="ivkMnu('setBarDesign')">Column</button>
+			<button type="button" onclick="ivkMnu('setIconDesign')">Marker</button>
+			<hr>
+		</dd>
+		<dt>Type</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('alternate glyph palette plugin')">Glyphs</button>
+			<button type="button" onclick="ivkMnu('area-type-options')">AreaTypeOptions</button>
+			<button type="button" onclick="ivkMnu('Adobe internal composite font plugin')">CompositeFonts</button>
+			<button type="button" onclick="ivkMnu('Adobe Kinsoku Settings')">KinsokuSetting</button>
+			<button type="button" onclick="ivkMnu('Adobe MojiKumi Settings')">MojikumiSetting</button>
+			<button type="button" onclick="ivkMnu('fitHeadline')">Fit Headline</button>
+			<button type="button" onclick="ivkMnu('outline')">Create Outlines</button>
+			<button type="button" onclick="ivkMnu('Adobe Illustrator Find Font Menu Item')">Find Font</button>
+			<button type="button" onclick="ivkMnu('Adobe Illustrator Smart Punctuation Menu Item')">SmartPunctuation</button>
+			<button type="button" onclick="ivkMnu('Adobe Optical Alignment Item')">Optical Margin</button>
+			<button type="button" onclick="ivkMnu('showHiddenChar')">ShowHiddenChars</button>
+			<hr>
+			Orientation<br />
+			<button type="button" onclick="ivkMnu('type-horizontal')">Horizontal</button>
+			<button type="button" onclick="ivkMnu('type-vertical')">Vertical</button>
+			<hr>
+		</dd>
+		<dt>Type on a Path</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('Rainbow')">Rainbow</button>
+			<button type="button" onclick="ivkMnu('3D ribbon')">3D Ribbon</button>
+			<button type="button" onclick="ivkMnu('Skew')">Skew</button>
+			<button type="button" onclick="ivkMnu('Stair Step')">Stair Step</button>
+			<button type="button" onclick="ivkMnu('Gravity')">Gravity</button>
+			<button type="button" onclick="ivkMnu('typeOnPathOptions')">Options</button>
+			<button type="button" onclick="ivkMnu('updateLegacyTOP')">Update Legacy</button>
+			<hr>
+		</dd>
+		<dt>Threaded Text</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('threadTextCreate')">Create</button>
+			<button type="button" onclick="ivkMnu('releaseThreadedTextSelection')">Release Selection</button>
+			<button type="button" onclick="ivkMnu('removeThreading')">RemoveThreading</button>
+			<hr>
+		</dd>
+		<dt>Change Case</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('UpperCase Change Case Item')">UPPERCASE</button>
+			<button type="button" onclick="ivkMnu('LowerCase Change Case Item')">lowercase</button>
+			<button type="button" onclick="ivkMnu('Title Case Change Case Item')">Title Case</button>
+			<button type="button" onclick="ivkMnu('Sentence case Change Case Item')">Sentence case</button>
+			<hr>
+		</dd>
+		<dt>Select</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('selectall')">all</button>
+			<button type="button" onclick="ivkMnu('selectallinartboard')">AoAAB</button>
+			<button type="button" onclick="ivkMnu('deselectall')">deselect</button>
+			<button type="button" onclick="ivkMnu('Find Reselect menu item')">reselect</button>
+			<button type="button" onclick="ivkMnu('Inverse menu item')">inverse</button>
+			<button type="button" onclick="ivkMnu('Selection Hat 8')">next Above</button>
+			<button type="button" onclick="ivkMnu('Selection Hat 9')">next Below</button>
+			<hr>
+			same<br />
+			<button type="button" onclick="ivkMnu('Find Appearance menu item')">appearance</button>
+			<button type="button" onclick="ivkMnu('Find Appearance Attributes menu item')">appearanceAttri...</button>
+			<button type="button" onclick="ivkMnu('Find Blending Mode menu item')">blendingMode</button>
+			<button type="button" onclick="ivkMnu('Find Fill & Stroke menu item')">fillAndStroke</button>
+			<button type="button" onclick="ivkMnu('Find Fill Color menu item')">fillColor</button>
+			<button type="button" onclick="ivkMnu('Find Opacity menu item')">opacity</button>
+			<button type="button" onclick="ivkMnu('Find Stroke Color menu item')">strokeColor</button>
+			<button type="button" onclick="ivkMnu('Find Stroke Weight menu item')">strokeWeight</button>
+			<button type="button" onclick="ivkMnu('Find Style menu item')">graphicStyle</button>
+			<button type="button" onclick="ivkMnu('Find Symbol Instance menu item')">symbolInstance</button>
+			<button type="button" onclick="ivkMnu('Find Link Block Series menu item')">linkBlockSeries</button>
+			<hr>
+			object<br />
+			<button type="button" onclick="ivkMnu('Selection Hat 3')">allOnSameLayers</button>
+			<button type="button" onclick="ivkMnu('Selection Hat 1')">directionHandles</button>
+			<button type="button" onclick="ivkMnu('Selection Hat 12')">notAlignedPxGrid</button>
+			<button type="button" onclick="ivkMnu('Bristle Brush Strokes menu item')">bristleBrush</button>
+			<button type="button" onclick="ivkMnu('Brush Strokes menu item')">brushStrokes</button>
+			<button type="button" onclick="ivkMnu('Clipping Masks menu item')">clippingMasks</button>
+			<button type="button" onclick="ivkMnu('Stray Points menu item')">strayPoints</button>
+			<button type="button" onclick="ivkMnu('Text Objects menu item')">textObjects</button>
+			<button type="button" onclick="ivkMnu('Dynamic Text')">flashDynamicText</button>
+			<button type="button" onclick="ivkMnu('Input Text')">flashInputText</button>
+			<hr>
+			<button type="button" onclick="ivkMnu('Selection Hat 10')">saveSelection</button>
+			<button type="button" onclick="ivkMnu('Selection Hat 11')">editSelection</button>
+			<hr>
+		</dd>
+		<dt>Effect</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('Adobe Apply Last Effect')">Apply Last Effect</button>
+			<button type="button" onclick="ivkMnu('Adobe Last Effect')">Last Effect</button>
+			<button type="button" onclick="ivkMnu('Live Rasterize Effect Setting')">Effects Setting</button>
+			<hr>
+			3D<br />
+			<button type="button" onclick="ivkMnu('Live 3DExtrude')">Extrude&Bevel</button>
+			<button type="button" onclick="ivkMnu('Live 3DRevolve')">Revolve</button>
+			<button type="button" onclick="ivkMnu('Live 3DRotate')">Rotate</button>
+			<hr>
+			Convert to Shape
+			<button type="button" onclick="ivkMnu('Live Rectangle')">Rectangle</button>
+			<button type="button" onclick="ivkMnu('Live Rounded Rectangle')">Rounded Rect</button>
+			<button type="button" onclick="ivkMnu('Live Ellipse')">Ellipse</button>
+			<hr>
+			<button type="button" onclick="ivkMnu('Live Trim Marks')">Crop Marks</button>
+			<hr>
+			Distort Transform
+			<button type="button" onclick="ivkMnu('Live Free Distort')">Free Distort</button>
+			<button type="button" onclick="ivkMnu('Live Pucker & Bloat')">Pucker & Bloat</button>
+			<button type="button" onclick="ivkMnu('Live Roughen')">Roughen</button>
+			<button type="button" onclick="ivkMnu('Live Transform')">Transform</button>
+			<button type="button" onclick="ivkMnu('Live Scribble and Tweak')">Tweak</button>
+			<button type="button" onclick="ivkMnu('Live Twist')">Twist</button>
+			<button type="button" onclick="ivkMnu('Live Zig Zag')">Zig Zag</button>
+			<hr>Path
+			<button type="button" onclick="ivkMnu('Live Offset Path')">Offset Path</button>
+			<button type="button" onclick="ivkMnu('Live Outline Object')">Outline Object</button>
+			<button type="button" onclick="ivkMnu('Live Outline Stroke')">Outline Stroke</button>
+			<hr>Pathfinder
+			<button type="button" onclick="ivkMnu('Live Pathfinder Add')">Add</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Intersect')">Intersect</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Exclude')">Exclude</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Subtract')">Subtract</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Minus Back')">Minus Back</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Divide')">Divide</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Trim')">PTrim</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Merge')">Merge</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Crop')">Crop</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Outline')">Outline</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Hard Mix')">Hard Mix</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Soft Mix')">PSoft Mix</button>
+			<button type="button" onclick="ivkMnu('Live Pathfinder Trap')">Trap</button>
+			<hr>
+			<button type="button" onclick="ivkMnu('Live Rasterize')">Rasterize</button>
+			<hr>
+			Stylize
+			<button type="button" onclick="ivkMnu('Live Adobe Drop Shadow')">Drop Shadow</button>
+			<button type="button" onclick="ivkMnu('Live Feather')">Feather</button>
+			<button type="button" onclick="ivkMnu('Live Inner Glow')">Inner Glow</button>
+			<button type="button" onclick="ivkMnu('Live Outer Glow')">outer Glow</button>
+			<button type="button" onclick="ivkMnu('Live Adobe Round Corners')">Round Corners</button>
+			<button type="button" onclick="ivkMnu('Live Scribble Fill')">Scribble</button>
+			<hr>
+			SVG Filters
+			<button type="button" onclick="ivkMnu('Live SVG Filters')">Apply SVG Filter</button>
+			<button type="button" onclick="ivkMnu('SVG Filter Import')">Import SVG Filter</button>
+			<hr>
+			Warp
+			<button type="button" onclick="ivkMnu('Live Deform Arc')">Arc</button>
+			<button type="button" onclick="ivkMnu('Live Deform Arc Lower')">Arc Lower</button>
+			<button type="button" onclick="ivkMnu('Live Deform Arc Upper')">Arc Upper</button>
+			<button type="button" onclick="ivkMnu('Live Deform Arch')">Arch</button>
+			<button type="button" onclick="ivkMnu('Live Deform Bulge')">Bulge</button>
+			<button type="button" onclick="ivkMnu('Live Deform Shell Lower')">Shell Lower</button>
+			<button type="button" onclick="ivkMnu('Live Deform Shell Upper')">Shell Upper</button>
+			<button type="button" onclick="ivkMnu('Live Deform Flag')">Flag</button>
+			<button type="button" onclick="ivkMnu('Live Deform Wave')">Wave</button>
+			<button type="button" onclick="ivkMnu('Live Deform Fish')">Fish</button>
+			<button type="button" onclick="ivkMnu('Live Deform Rise')">Rise</button>
+			<button type="button" onclick="ivkMnu('Live Deform Fisheye')">Fisheye</button>
+			<button type="button" onclick="ivkMnu('Live Deform Inflate')">Inflate</button>
+			<button type="button" onclick="ivkMnu('Live Deform Squeeze')">Squeeze</button>
+			<button type="button" onclick="ivkMnu('Live Deform Twist')">Twist</button>
+			<hr>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_GEfc')">EffectGallery</button>
+			<hr>
+			Artistic
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_ClrP')">Colored Pencil</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Ct')">Cutout</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_DryB')">Dry Brush</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_FlmG')">Film Grain</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Frsc')">Fresco</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_NGlw')">Neon Glow</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_PntD')">Paint Daubs</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_PltK')">Palette Knife</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_PlsW')">Plastic Wrap</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_PstE')">Poster Edges</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_RghP')">Rough Pastels</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_SmdS')">Smudge Stick</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Spng')">Sponge</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Undr')">Underpainting</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Wtrc')">Watercolor</button>
+			<hr>
+			Blur
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_GblR')">Gaussian Blur</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_RdlB')">Radial Blur</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_SmrB')">Smart Blur</button>
+			<hr>
+			Brush Strokes
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_AccE')">Accented Edges</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_AngS')">Angled Strokes</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Crsh')">Crosshatch</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_DrkS')">Dark Strokes</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_InkO')">Ink Outlines</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Spt')">Spatter</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_SprS')">Sprayed Strokes</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Smie')">Sumi-e</button>
+			<hr>
+			Distort
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_DfsG')">Diffuse Glow</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Gls')">Glass</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_OcnR')">Ocean Ripple</button>
+			<hr>
+			Pixelate
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_ClrH')">Color Halftone</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Crst')">Crystallize</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Mztn')">Mezzotint</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Pntl')">Pointillize</button>
+			<hr>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_USMk')">Unsharp Mask</button>
+			<hr>
+			Sketch
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_BsRl')">Bas Relief</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_ChlC')">Chalk & Charcoal</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Chrc')">Charcoal</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Chrm')">Chrome</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_CntC')">Cont￩ Crayon</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_GraP')">Graphic Pen</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_HlfS')">Halftone Pattern</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_NtPr')">Note Paper</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Phtc')">Photocopy</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Plst')">Plaster</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Rtcl')">Reticulation</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Stmp')">Stamp</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_TrnE')">Torn Edges</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_WtrP')">Water Paper</button>
+			<hr>
+			Stylize
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_GlwE')">Glowing Edges</button>
+			<hr>
+			Texture
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Crql')">Craquelure</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Grn')">Grain</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_MscT')">Mosaic Tiles</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Ptch')">Patchwork</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_StnG')">Stained Glass</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Txtz')">Texturizer</button>
+			<hr>
+			Video
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_Dntr')">De-Interlace</button>
+			<button type="button" onclick="ivkMnu('Live PSAdapter_plugin_NTSC')">NTSC Colors</button>
+			<hr>
+		</dd>
+		<dt>View</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('preview')">Preview</button>
+			<button type="button" onclick="ivkMnu('ink')">OP Preview</button>
+			<button type="button" onclick="ivkMnu('raster')">Pixel Preview</button>
+			<hr>
+			Proof Setup
+			<button type="button" onclick="ivkMnu('proof-document')">Doc CMYK></button>
+			<button type="button" onclick="ivkMnu('proof-mac-rgb')">Mac RGB</button>
+			<button type="button" onclick="ivkMnu('proof-win-rgb')">sRGB</button>
+			<button type="button" onclick="ivkMnu('proof-monitor-rgb')">Monitor RGB</button>
+			<button type="button" onclick="ivkMnu('proof-colorblindp')">CB P-type</button>
+			<button type="button" onclick="ivkMnu('proof-colorblindd')">CB D-type</button>
+			<button type="button" onclick="ivkMnu('proof-custom')">Customize</button>
+			<button type="button" onclick="ivkMnu('proofColors')">Proof Colors</button>
+			<hr>
+			<button type="button" onclick="ivkMnu('zoomin')">Zoom In</button>
+			<button type="button" onclick="ivkMnu('zoomout')">Zoom Out</button>
+			<button type="button" onclick="ivkMnu('fitin')">Fit Artboard</button>
+			<button type="button" onclick="ivkMnu('fitall')">Fit All</button>
+			<button type="button" onclick="ivkMnu('actualsize')">Actual Size</button>
+			<button type="button" onclick="ivkMnu('edge')">Edges</button>
+			<button type="button" onclick="ivkMnu('artboard')">Artboards</button>
+			<button type="button" onclick="ivkMnu('pagetiling')">Print Tilings</button>
+			<button type="button" onclick="ivkMnu('AISlice Feedback Menu')">Slices</button>
+			<button type="button" onclick="ivkMnu('AISlice Lock Menu')">Slices Lock State</button>
+			<button type="button" onclick="ivkMnu('showtemplate')">Template</button>
+			<button type="button" onclick="ivkMnu('ruler')">Rulers</button>
+			<button type="button" onclick="ivkMnu('videoruler')">Video Rulers</button>
+			<button type="button" onclick="ivkMnu('rulerCoordinateSystem')">ToGlobalRulers</button>
+			<button type="button" onclick="ivkMnu('AI Bounding Box Toggle')">Bounding Box</button>
+			<button type="button" onclick="ivkMnu('TransparencyGrid Menu Item')">TransparencyGrid</button>
+			<button type="button" onclick="ivkMnu('textthreads')">Text Threads</button>
+			<button type="button" onclick="ivkMnu('Gradient Feedback')">GradientAnnotator</button>
+			<button type="button" onclick="ivkMnu('Show Gaps Planet X')">LP Gaps</button>
+			<hr>
+			Guides
+			<button type="button" onclick="ivkMnu('showguide')">Guides</button>
+			<button type="button" onclick="ivkMnu('lockguide')">Guides Lock State</button>
+			<button type="button" onclick="ivkMnu('makeguide')">Make Guides</button>
+			<button type="button" onclick="ivkMnu('releaseguide')">Release Guides</button>
+			<button type="button" onclick="ivkMnu('clearguide')">Clear Guides</button>
+			<hr>
+			<button type="button" onclick="ivkMnu('Snapomatic on-off menu item')">Smart Guides</button>
+			<hr>
+			Perspective Grid
+			<button type="button" onclick="ivkMnu('Show Perspective Grid')">Show Grid</button>
+			<button type="button" onclick="ivkMnu('Show Ruler')">Show Rulers</button>
+			<button type="button" onclick="ivkMnu('Snap to Grid')">Snap to Grid</button>
+			<button type="button" onclick="ivkMnu('Lock Perspective Grid')">Grid Lock State</button>
+			<button type="button" onclick="ivkMnu('Lock Station Point')">Lock Station Point</button>
+			<button type="button" onclick="ivkMnu('Define Perspective Grid')">Define Grid</button>
+			<button type="button" onclick="ivkMnu('Save Perspective Grid as Preset')">SaveGridAsPreset</button>
+			<button type="button" onclick="ivkMnu('showgrid')">Show Grid</button>
+			<button type="button" onclick="ivkMnu('snapgrid')">Snap to Grid</button>
+			<button type="button" onclick="ivkMnu('snappoint')">Snap to Point</button>
+			<button type="button" onclick="ivkMnu('newview')">New View</button>
+			<button type="button" onclick="ivkMnu('editview')">Edit Views</button>
+			<hr>
+		</dd>
+		<dt>Window</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('newwindow')">New Window</button>
+			<hr>
+			Arrange
+			<button type="button" onclick="ivkMnu('cascade')">Cascade</button>
+			<button type="button" onclick="ivkMnu('tile')">Tile</button>
+			<button type="button" onclick="ivkMnu('floatInWindow')">Float in Window</button>
+			<button type="button" onclick="ivkMnu('floatAllInWindows')">FloatAll</button>
+			<button type="button" onclick="ivkMnu('consolidateAllWindows')">Consolidate All</button>
+			<hr>
+			Workspace
+			<button type="button" onclick="ivkMnu('Adobe Save Workspace')">Save Workspace</button>
+			<button type="button" onclick="ivkMnu('Adobe New Workspace')">New Workspace</button>
+			<button type="button" onclick="ivkMnu('Adobe Manage Workspace')">Workspaces</button>
+			<hr>
+			<button type="button" onclick="ivkMnu('CSS Menu Item')">CSS Menu</button>
+			<button type="button" onclick="ivkMnu('AdobeBuiltInToolbox1')">Tools</button>
+			<button type="button" onclick="ivkMnu('Adobe Action Palette')">Actions</button>
+			<button type="button" onclick="ivkMnu('AdobeAlignObjects2')">Align</button>
+			<button type="button" onclick="ivkMnu('Style Palette')">Appearance</button>
+			<button type="button" onclick="ivkMnu('Adobe Artboard Palette')">Artboards</button>
+			<button type="button" onclick="ivkMnu('internal palettes posing as plug-in menus-attributes')">Attributes</button>
+			<button type="button" onclick="ivkMnu('Adobe BrushManager Menu Item')">Brushes</button>
+			<button type="button" onclick="ivkMnu('Adobe Color Palette')">Color</button>
+			<button type="button" onclick="ivkMnu('Adobe Harmony Palette')">Color Guide</button>
+			<button type="button" onclick="ivkMnu('Adobe Illustrator Kuler Panel')">Kuler Panel</button>
+			<button type="button" onclick="ivkMnu('DocInfo1')">Document Info</button>
+			<button type="button" onclick="ivkMnu('Adobe Flattening Preview')">Flattener Preview</button>
+			<button type="button" onclick="ivkMnu('Adobe Gradient Palette')">Gradient</button>
+			<button type="button" onclick="ivkMnu('Adobe Style Palette')">Graphic Styles</button>
+			<button type="button" onclick="ivkMnu('internal palettes posing as plug-in menus-info')">Info</button>
+			<button type="button" onclick="ivkMnu('AdobeLayerPalette1')">Layers</button>
+			<button type="button" onclick="ivkMnu('Adobe LinkPalette Menu Item')">Links</button>
+			<button type="button" onclick="ivkMnu('AI Magic Wand')">Magic Wand</button>
+			<button type="button" onclick="ivkMnu('AdobeNavigator')">Navigator</button>
+			<button type="button" onclick="ivkMnu('Adobe PathfinderUI')">Pathfinder</button>
+			<button type="button" onclick="ivkMnu('Adobe Separation Preview Panel')">Separations Preview</button>
+			<button type="button" onclick="ivkMnu('Adobe Stroke Palette')">Stroke</button>
+			<button type="button" onclick="ivkMnu('Adobe SVG Interactivity Palette')">SVG Interactivity</button>
+			<button type="button" onclick="ivkMnu('Adobe Swatches Menu Item')">Swatches</button>
+			<button type="button" onclick="ivkMnu('Adobe Symbol Palette')">Symbols</button>
+			<button type="button" onclick="ivkMnu('AdobeTransformObjects1')">Transform</button>
+			<button type="button" onclick="ivkMnu('Adobe Transparency Palette Menu Item')">Transparency</button>
+			<button type="button" onclick="ivkMnu('Adobe Variables Palette Menu Item')">Variables</button>
+			<button type="button" onclick="ivkMnu('internal palettes posing as plug-in menus-character')">Character</button>
+			<button type="button" onclick="ivkMnu('Character Styles')">Character Styles</button>
+			<button type="button" onclick="ivkMnu('alternate glyph palette plugin 2')">Glyphs</button>
+			<button type="button" onclick="ivkMnu('internal palettes posing as plug-in menus-opentype')">OpenType</button>
+			<button type="button" onclick="ivkMnu('internal palettes posing as plug-in menus-paragraph')">Paragraph</button>
+			<button type="button" onclick="ivkMnu('Adobe Paragraph Styles Palette')">Paragraph Styles</button>
+			<button type="button" onclick="ivkMnu('internal palettes posing as plug-in menus-tab')">Tabs</button>
+			<button type="button" onclick="ivkMnu('Adobe Art Style Plugin Other libraries menu item')">Other Library</button>
+			<button type="button" onclick="ivkMnu('Adobe Symbol Palette Plugin Other libraries menu item')">Other Library</button>
+			<hr>
+		</dd>
+		<dt>Help</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('helpcontent')">Illustrator Help</button>
+			<button type="button" onclick="ivkMnu('about')">About Illustrator</button>
+			<button type="button" onclick="ivkMnu('System Info')">System Info</button>
+			<hr>
+		</dd>
+		<dt>Other Panel</dt>
+		<dd>
+			<button type="button" onclick="ivkMnu('Adobe New Symbol Shortcut')">New Symbol</button>
+			<button type="button" onclick="ivkMnu('Adobe Color Palette Secondary')">Show Color Panel</button>
+			<button type="button" onclick="ivkMnu('Adobe Actions Batch')">Actions Batch</button>
+			<button type="button" onclick="ivkMnu('Adobe New Fill Shortcut')">Add New Fill</button>
+			<button type="button" onclick="ivkMnu('Adobe New Stroke Shortcut')">Add New Stroke</button>
+			<button type="button" onclick="ivkMnu('Adobe New Style Shortcut')">New Graphic Style</button>
+			<button type="button" onclick="ivkMnu('AdobeLayerPalette2')">New Layer</button>
+			<button type="button" onclick="ivkMnu('AdobeLayerPalette3')">New Layer Dialog</button>
+			<button type="button" onclick="ivkMnu('Adobe Update Link Shortcut')">Update Link</button>
+			<button type="button" onclick="ivkMnu('AdobeNavigator2')">Navigator Options</button>
+			<button type="button" onclick="ivkMnu('Adobe New Swatch Shortcut Menu')">New Swatch</button>
+			<hr>
+		</dd>
+		</dl>
+		</body>
+	<script>
+		themeSynchronizer.init();
+	</script>
+	</html>
